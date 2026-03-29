@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "source": "Indian Consensus Guidelines on Adult Immunization 2026",
+    "columns": {
+      "adults_18_49": "Adults 18–49 years (general population)",
+      "elderly_50plus": "Adults ≥50 years",
+      "pregnancy": "Pregnancy",
+      "at_risk": "At-Risk (DM, Heart, Liver, CRD, CKD, Nephrotic syndrome, Haemodialysis)",
+      "high_risk_immuno": "High-Risk / Immunocompromised (HIV, Malignancies, Transplant, Asplenia, SCD, Down syndrome, CSF leak, Cochlear implant, Complement deficiencies)",
+      "lifestyle": "Lifestyle-related (Alcohol use disorder, Smoking)",
+      "special_situations": "Special Situations (HCPs, Travellers, Mass gatherings, Occupational exposure)",
+      "adolescents_12_18": "Adolescents 12–18 years"
+    },
+    "recommendation_legend": {
+      "R": "Recommended",
+      "NR": "Not Recommended",
+      "BR": "May be considered after benefit-risk evaluation",
+      "AR": "With additional risk / shared clinical decision-making"
+    }
+  },
+  "vaccines": [
+    {
+      "id": "influenza",
+      "name": "Influenza Vaccine",
+      "aliases": ["flu", "flu shot", "flu vaccine", "IIV", "seasonal flu", "influenza"],
+      "category": "Annual",
+      "indications": ["all_adults", "elderly", "pregnancy", "diabetes", "ckd", "heart_disease", "lung_disease", "liver_disease", "hiv", "immunocompromised", "healthcare_workers", "travellers"],
+      "schedule": "Annual, 1 dose every year",
+      "doses": "1 dose annually",
+      "route": "IM (intramuscular); also available intranasal",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Trivalent (TIV): H1N1 + H3N2 + B/Victoria", "Quadrivalent/Tetravalent (QIV): H1N1 + H3N2 + 2 B strains"],
+      "contraindications": [
+        "Severe allergic reaction to previous influenza vaccine",
+        "Egg allergy — use egg-free or cell-based formulation"
+      ],
+      "precautions": [
+        "GBS (Guillain-Barré Syndrome) within 6 weeks of prior influenza vaccination",
+        "Administer throughout influenza season (pre-monsoon in South India; pre-winter in North India)"
+      ],
+      "special_populations": {
+        "pregnancy": "Recommended in any trimester — safe and protective for mother and infant",
+        "immunocompromised": "Inactivated vaccine only — tetravalent preferred; close contacts should also receive tetravalent",
+        "elderly": "Tetravalent preferred in ≥50 years"
+      },
+      "booster": "Annual repeat dose",
+      "co_administration": "Can be co-administered with most other vaccines",
+      "pages": [35],
+      "recommendations": {
+        "adults_18_49": "R",
+        "elderly_50plus": "R",
+        "pregnancy": "R",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "covid19",
+      "name": "COVID-19 Vaccine",
+      "aliases": ["covid", "covid-19", "corona", "coronavirus", "covishield", "covaxin", "sputnik", "corbevar"],
+      "category": "Pandemic / Epidemic",
+      "indications": ["all_adults", "elderly", "pregnancy", "diabetes", "ckd", "heart_disease", "lung_disease", "liver_disease", "hiv", "immunocompromised", "healthcare_workers"],
+      "schedule": "Primary series: 2 doses (Day 0 + 28 days, or as per specific vaccine schedule); Booster: single dose at 12 months",
+      "doses": "2 doses primary; 1 booster dose",
+      "route": "IM (intramuscular); ZyCoV-D: intradermal",
+      "dose_volume": "0.5 ml (varies by vaccine brand)",
+      "formulations": [
+        "ChAdOx1 nCoV-19 (COVISHIELD): 2 doses, 4–6 weeks apart",
+        "Whole-Virion Inactivated (COVAXIN): 2 doses, Day 0 & 28",
+        "mRNA-1273 (Spikevax): 2 doses, Day 0 & 28",
+        "Ad26.COV2-S (Jcovden): single dose",
+        "ZyCoV-D: 3 doses, Day 0, 28, 56 (intradermal)",
+        "CORBEVAX, COVOVAX, Gemcovac-19, Vaxzevria: 2 doses"
+      ],
+      "contraindications": [
+        "Severe allergic reaction to previous COVID-19 vaccine or its components"
+      ],
+      "precautions": [
+        "Recommended during pandemic/epidemic situations",
+        "Booster for elderly and significant comorbidities: at least 12 months after previous dose",
+        "No head-to-head comparison between vaccines — use locally available approved vaccine"
+      ],
+      "special_populations": {
+        "pregnancy": "Strongly recommended during pandemic — 2 doses at least 4 weeks apart",
+        "immunocompromised": "Recommended; additional doses may be needed",
+        "elderly": "Additional booster doses for all older adults"
+      },
+      "booster": "Single booster dose 12 months after primary series; additional doses for high-priority groups",
+      "pages": [27, 28],
+      "recommendations": {
+        "adults_18_49": "R",
+        "elderly_50plus": "R",
+        "pregnancy": "R",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "pneumococcal",
+      "name": "Pneumococcal Vaccine",
+      "aliases": ["pneumococcal", "pneumonia vaccine", "PCV", "PCV13", "PCV20", "PPSV23", "prevnar", "pneumovax"],
+      "category": "Comorbidities / Elderly",
+      "indications": ["elderly", "diabetes", "ckd", "heart_disease", "lung_disease", "liver_disease", "hiv", "immunocompromised", "asplenia", "cochlear_implant", "csf_leak"],
+      "schedule": "Preferred: Single dose PCV20 OR PCV13 followed by PPSV23 (1 year later for ≥50 yrs; 8 weeks later for high-risk)",
+      "doses": "1 dose PCV20 OR 1+1 (PCV13 + PPSV23)",
+      "route": "IM (PCV20, PCV13); IM or SC (PPSV23)",
+      "dose_volume": "0.5 ml",
+      "formulations": [
+        "PCV20 (20-valent conjugate): covers serotypes 1,3,4,5,6A,6B,7F,8,9V,10A,11A,12F,14,15B,18C,19A,19F,22F,23F,33F",
+        "PCV13 (13-valent conjugate): covers serotypes 1,3,4,5,6A,6B,7F,9V,14,18C,19A,19F,23F",
+        "PPSV23 (23-valent polysaccharide): covers 23 serotypes"
+      ],
+      "contraindications": [],
+      "precautions": [
+        "Previously vaccinated: single dose PCV20 1 year later",
+        "PCV13+PPSV23 previously given: 1 dose PCV20 at 5 years after last PPSV23 dose",
+        "PPSV23 booster: 1 dose every 5 years for high-risk"
+      ],
+      "special_populations": {
+        "pregnancy": "With additional risk — shared decision-making",
+        "immunocompromised": "PCV13 + PPSV23 8 weeks apart (high-risk accelerated schedule)",
+        "elderly": "All adults ≥50 years: single dose PCV20 (preferred)"
+      },
+      "booster": "PPSV23: 1 dose every 5 years for high-risk",
+      "pages": [39],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "R",
+        "pregnancy": "R",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "hepatitis_b",
+      "name": "Hepatitis B Vaccine",
+      "aliases": ["hepatitis b", "hep b", "hepb", "HBV", "hepatitis-b"],
+      "category": "Universal / At-Risk",
+      "indications": ["all_adults", "diabetes", "ckd", "liver_disease", "hiv", "healthcare_workers", "msm", "travel"],
+      "schedule": "3 doses: 0, 1, 6 months (standard); Accelerated: 0, 7, 21–30 days + booster at 12 months (combined HepA+HepB)",
+      "doses": "3 doses (standard); CKD/dialysis: 4 doses (0, 2, 6, 12 months) at 40 mcg",
+      "route": "Deep IM in deltoid region (avoid buttocks)",
+      "dose_volume": "0.5 ml standard; CKD/dialysis: 1 ml (40 mcg)",
+      "formulations": ["Monovalent HepB (recombinant DNA or plasma-derived)", "Combined HepA+HepB"],
+      "contraindications": [],
+      "precautions": [
+        "Booster: calculate based on antibody titres; revaccination every 5 years for high-risk (HCW, CKD on haemodialysis, immunocompromised)",
+        "CKD/dialysis: higher dose (40 mcg), 4-dose schedule (0, 2, 6, 12 months)"
+      ],
+      "special_populations": {
+        "pregnancy": "Recommended for unvaccinated at-risk pregnant women",
+        "immunocompromised": "Check post-vaccination titres; revaccinate if non-responder",
+        "ckd_dialysis": "40 mcg (1 ml) at 0, 2, 6, and 12 months; booster every 5 years"
+      },
+      "booster": "Revaccination every 5 years for high-risk (HCW, immunocompromised, CKD on haemodialysis)",
+      "pages": [32],
+      "recommendations": {
+        "adults_18_49": "R",
+        "elderly_50plus": "AR",
+        "pregnancy": "R",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "hepatitis_a",
+      "name": "Hepatitis A Vaccine",
+      "aliases": ["hepatitis a", "hep a", "hepa", "HAV", "hepatitis-a"],
+      "category": "At-Risk / Travel",
+      "indications": ["liver_disease", "hiv", "msm", "travel", "healthcare_workers", "drug_users"],
+      "schedule": "Inactivated: 2 doses, 6 months apart (1 ml IM); Live: single dose (0.5 ml SC)",
+      "doses": "Inactivated: 2 doses; Live: 1 dose",
+      "route": "Inactivated: IM (deltoid); Live: SC (deltoid)",
+      "dose_volume": "Inactivated: 1 ml; Live: 0.5 ml",
+      "formulations": ["Inactivated vaccine (IM)", "Live attenuated vaccine (SC)"],
+      "contraindications": [
+        "Pregnancy: contraindicated (use only inactivated if absolutely necessary with risk discussion)",
+        "Immunocompromised: only inactivated vaccine"
+      ],
+      "precautions": [
+        "Post-exposure vaccination recommended for MSM and other high-risk situations",
+        "Combined HepA+HepB vaccine: accelerated schedule 0, 7, 21–30 days + booster at 12 months",
+        "≥50 years: only inactivated vaccine recommended"
+      ],
+      "special_populations": {
+        "pregnancy": "With additional risk (AR) — contraindicated per key considerations; inactivated only if needed",
+        "immunocompromised": "Inactivated vaccine only",
+        "elderly": "Only inactivated vaccine recommended"
+      },
+      "booster": "Not required",
+      "pages": [31],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "AR",
+        "pregnancy": "AR",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "hpv",
+      "name": "HPV Vaccine (Human Papillomavirus)",
+      "aliases": ["hpv", "human papillomavirus", "cervical cancer vaccine", "HPV2", "HPV4", "HPV9", "gardasil", "cervarix"],
+      "category": "Cancer Prevention",
+      "indications": ["all_adults", "hiv", "immunocompromised", "msm"],
+      "schedule": "Age 9–14: 2 doses at least 5 months apart; Age ≥15: 3 doses at 0, 1–2, 5–8 months; Immunocompromised (any age): 3 doses",
+      "doses": "2 doses (if started age 9–14) OR 3 doses (if started ≥15 years)",
+      "route": "IM (intramuscular)",
+      "dose_volume": "1 ml",
+      "formulations": [
+        "HPV2 (Bivalent — Cervarix): protects against HPV 16 and 18",
+        "HPV4 (Quadrivalent — Gardasil): protects against HPV 6, 11, 16, 18",
+        "HPV9 (Nonavalent — Gardasil 9): protects against HPV 6, 11, 16, 18, 31, 33, 45, 52, 58"
+      ],
+      "contraindications": [
+        "Pregnancy: defer until after delivery"
+      ],
+      "precautions": [
+        "All people up to age 26: recommended",
+        "Adults 27–45: shared clinical decision-making (BR category)",
+        "Immunocompromised (including HIV): 3-dose series regardless of starting age",
+        "Best administered before first sexual encounter"
+      ],
+      "special_populations": {
+        "pregnancy": "Not recommended — defer until after delivery (no evidence of teratogenicity if inadvertently given)",
+        "immunocompromised": "3-dose series even if started at 9–14 years",
+        "hiv": "3-dose series recommended"
+      },
+      "booster": "Not required",
+      "pages": [34],
+      "recommendations": {
+        "adults_18_49": "R",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "NR",
+        "special_situations": "NR",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "tdap_td",
+      "name": "Tdap / Td Vaccine (Tetanus, Diphtheria, Pertussis)",
+      "aliases": ["tetanus", "tdap", "Td", "diphtheria", "pertussis", "whooping cough", "DPT", "boostrix"],
+      "category": "Universal",
+      "indications": ["all_adults", "pregnancy", "healthcare_workers"],
+      "schedule": "Unvaccinated adults: 3 doses (Tdap at 0, Td/Tdap at 4 weeks, Td/Tdap at 6–12 months); Booster: single Td or Tdap every 10 years",
+      "doses": "3 doses (primary unvaccinated); booster every 10 years",
+      "route": "IM (intramuscular)",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Tdap: Tetanus + Diphtheria (reduced) + acellular Pertussis", "Td: Tetanus + Diphtheria (reduced)"],
+      "contraindications": [],
+      "precautions": [
+        "Each pregnancy: 1 dose Tdap at 27–36 weeks gestation",
+        "Wound management: if not fully immunized, start primary series",
+        "After injury with tetanus risk: Tdap booster even if vaccinated, if >5 years since last dose"
+      ],
+      "special_populations": {
+        "pregnancy": "Tdap in EVERY pregnancy at 27–36 weeks gestation (provides neonatal protection)",
+        "wound": "1 dose Tdap if wound with tetanus risk and >5 years since last dose"
+      },
+      "booster": "1 dose Td or Tdap every 10 years; additionally in pregnancy (weeks 27–36)",
+      "pages": [29],
+      "recommendations": {
+        "adults_18_49": "R",
+        "elderly_50plus": "R",
+        "pregnancy": "R",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "zoster",
+      "name": "Herpes Zoster Vaccine (Shingles)",
+      "aliases": ["shingles", "herpes zoster", "RZV", "zoster", "shingrix"],
+      "category": "Elderly / At-Risk",
+      "indications": ["elderly", "heart_disease", "immunocompromised"],
+      "schedule": "2 doses, 2–6 months apart",
+      "doses": "2 doses",
+      "route": "IM in deltoid area",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Recombinant Zoster Vaccine (RZV/Shingrix) — non-live, can be used in immunocompromised"],
+      "contraindications": [
+        "Do not expose to direct sunlight or heat"
+      ],
+      "precautions": [
+        "Recommended for all adults ≥50 years, also to prevent recurrence of herpes zoster",
+        "Recommended in patients with CVD (MI, CHF, Stroke) — bidirectional risk with HZ"
+      ],
+      "special_populations": {
+        "immunocompromised": "Recombinant vaccine (non-live) — can be administered to immunocompromised patients",
+        "cvd": "Recommended — bidirectional risk between herpes zoster and cardiovascular disease"
+      },
+      "booster": "Not required",
+      "pages": [43],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "R",
+        "pregnancy": "NR",
+        "at_risk": "R",
+        "high_risk_immuno": "BR",
+        "lifestyle": "NR",
+        "special_situations": "NR",
+        "adolescents_12_18": "NR"
+      }
+    },
+    {
+      "id": "mmr",
+      "name": "MMR Vaccine (Measles, Mumps, Rubella)",
+      "aliases": ["mmr", "measles", "mumps", "rubella", "MR", "MMRV"],
+      "category": "Non-Immune Adults",
+      "indications": ["non_immune_adults", "healthcare_workers", "women_childbearing_age"],
+      "schedule": "2 doses, 4 weeks apart",
+      "doses": "2 doses (4 weeks apart)",
+      "route": "SC (subcutaneous injection)",
+      "dose_volume": "0.5 ml",
+      "formulations": [
+        "MR: Measles + Rubella",
+        "MMR: Measles + Mumps + Rubella",
+        "MMRV: Measles + Mumps + Rubella + Varicella"
+      ],
+      "contraindications": [
+        "Pregnancy: contraindicated (live attenuated vaccine)",
+        "Severely immunocompromised: avoid live vaccines"
+      ],
+      "precautions": [
+        "Rubella-susceptible women not pregnant: give 1 dose MMR; if pregnant, administer postpartum",
+        "If inadvertently given during pregnancy: do NOT terminate pregnancy (no proven teratogenic risk)",
+        "MMR safe during breastfeeding",
+        "HCW without evidence of immunity: prioritize vaccination"
+      ],
+      "special_populations": {
+        "pregnancy": "Contraindicated; administer postpartum. OK during measles/rubella outbreaks if benefit > risk",
+        "immunocompromised": "Avoid in severely immunocompromised; consult specialist",
+        "healthcare_workers": "Recommended if non-immune (priority group)"
+      },
+      "booster": "Not required",
+      "pages": [37],
+      "recommendations": {
+        "adults_18_49": "BR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "R",
+        "high_risk_immuno": "BR",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "varicella",
+      "name": "Varicella Vaccine (Chickenpox)",
+      "aliases": ["varicella", "chickenpox", "chicken pox", "VZV"],
+      "category": "Non-Immune Adults",
+      "indications": ["non_immune_adults", "healthcare_workers", "hostel_residents"],
+      "schedule": "2 doses, 4–8 weeks apart; post-exposure: within 3–5 days of exposure",
+      "doses": "2 doses (4–8 weeks apart)",
+      "route": "SC (subcutaneous injection)",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Live attenuated varicella vaccine"],
+      "contraindications": [
+        "Pregnancy: not recommended (live attenuated vaccine)",
+        "Severely immunocompromised: avoid (live vaccine)"
+      ],
+      "precautions": [
+        "Post-exposure: within 3–5 days of exposure to prevent or modify disease",
+        "Pre-vaccinated (1 dose): 1 additional dose; not vaccinated: 2 doses",
+        "High-risk groups: HCW, household contacts of immunocompromised persons"
+      ],
+      "special_populations": {
+        "pregnancy": "Not recommended; vaccinate susceptible women postpartum",
+        "healthcare_workers": "Recommended for susceptible HCW (occupational exposure risk)"
+      },
+      "booster": "Not required (post-exposure: see schedule)",
+      "pages": [25],
+      "recommendations": {
+        "adults_18_49": "BR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "BR",
+        "lifestyle": "NR",
+        "special_situations": "NR",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "meningococcal",
+      "name": "Meningococcal Vaccine",
+      "aliases": ["meningococcal", "meningitis", "MenACWY", "MenB", "meningococcus"],
+      "category": "High-Risk / Travel",
+      "indications": ["asplenia", "hiv", "complement_deficiency", "travel", "hajj", "healthcare_workers"],
+      "schedule": "Single dose IM; high-risk adults: different dosing schedule",
+      "doses": "1 dose standard; multiple doses for high-risk",
+      "route": "Conjugate vaccine: IM; PBCP: SC",
+      "dose_volume": "0.5 ml",
+      "formulations": [
+        "MenACWY (Quadrivalent): protects against serogroups A, C, W, Y",
+        "MenB (Serogroup B): protects against serogroup B"
+      ],
+      "contraindications": [],
+      "precautions": [
+        "High-risk adults (asplenia, HIV, complement deficiency): different dosing schedule",
+        "Mass gatherings (Hajj, Kumbh Mela): MenACWY recommended"
+      ],
+      "special_populations": {
+        "asplenia": "MenACWY: R; MenB: R — both recommended",
+        "hiv": "MenACWY: R; MenB: R",
+        "travel": "MenACWY: R for travel to endemic/hyperendemic areas; Hajj: MenACWY mandatory"
+      },
+      "booster": "MenACWY: every 5 years if risk continues; MenB: 1 booster 1 year after primary, then every 2–3 years if risk continues",
+      "pages": [38],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "BR",
+        "pregnancy": "AR",
+        "at_risk": "BR",
+        "high_risk_immuno": "BR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "AR"
+      },
+      "sub_vaccines": {
+        "MenACWY": {
+          "adults_18_49": "NR",
+          "elderly_50plus": "BR",
+          "pregnancy": "AR",
+          "at_risk": "BR",
+          "high_risk_immuno": "BR",
+          "lifestyle": "NR",
+          "special_situations": "R",
+          "adolescents_12_18": "AR"
+        },
+        "MenB": {
+          "adults_18_49": "NR",
+          "elderly_50plus": "NR",
+          "pregnancy": "NR",
+          "at_risk": "NR",
+          "high_risk_immuno": "NR",
+          "lifestyle": "NR",
+          "special_situations": "R",
+          "adolescents_12_18": "NR"
+        }
+      }
+    },
+    {
+      "id": "typhoid",
+      "name": "Typhoid Vaccine",
+      "aliases": ["typhoid", "typhoid fever", "salmonella", "ViPS", "TCV", "typhoid conjugate"],
+      "category": "Travel / Outbreak",
+      "indications": ["travel", "food_handlers", "endemic_areas", "outbreak"],
+      "schedule": "Inactivated ViPS/TCV: single dose IM at least 2 weeks before travel; Live oral: 4 capsules on Days 1, 3, 5, 7 at least 1 week before travel",
+      "doses": "1 dose (ViPS/TCV) OR 4 oral capsules (live vaccine)",
+      "route": "ViPS/TCV: IM; Live vaccine: oral",
+      "dose_volume": "0.5 ml (IM)",
+      "formulations": [
+        "Vi Polysaccharide (ViPS): injectable IM",
+        "Typhoid Conjugate Vaccine (TCV): injectable IM (preferred, longer protection)",
+        "Live attenuated oral vaccine (Ty21a): 4 capsules, Days 1, 3, 5, 7"
+      ],
+      "contraindications": [
+        "Live oral vaccine contraindicated in pregnancy"
+      ],
+      "precautions": [
+        "Inactivated vaccine preferred in pregnancy (live oral vaccine contraindicated)",
+        "ViPS booster: every 2 years if risk continues",
+        "Live oral booster: every 5 years if risk continues"
+      ],
+      "special_populations": {
+        "pregnancy": "Only inactivated (ViPS/TCV) vaccine; live oral vaccine contraindicated",
+        "food_handlers": "Recommended for professional food handlers",
+        "travel": "Administer at least 2 weeks (ViPS/TCV) or 1 week (live oral) before travel"
+      },
+      "booster": "ViPS: every 2 years; Live oral: every 5 years (if risk continues)",
+      "pages": [42],
+      "recommendations": {
+        "adults_18_49": "R",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "NR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "hepatitis_e",
+      "name": "Hepatitis E Vaccine",
+      "aliases": ["hepatitis e", "hep e", "HEV", "hepatitis-e"],
+      "category": "At-Risk / Special Situations",
+      "indications": ["liver_disease", "travel", "women_childbearing_age", "military", "food_handlers"],
+      "schedule": "3 doses: 0, 1, 6 months",
+      "doses": "3 doses",
+      "route": "IM (intramuscular, deltoid)",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Recombinant vaccine (E. coli-based)"],
+      "contraindications": [],
+      "precautions": [
+        "Pregnancy: based on shared clinical decision-making",
+        "Special situations include women of childbearing age, travellers to endemic areas, animal husbandry/catering workers, military, outbreaks"
+      ],
+      "special_populations": {
+        "pregnancy": "Shared clinical decision-making — benefit vs risk evaluation"
+      },
+      "booster": "Not required",
+      "pages": [33],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "R",
+        "pregnancy": "NR",
+        "at_risk": "R",
+        "high_risk_immuno": "R",
+        "lifestyle": "R",
+        "special_situations": "R",
+        "adolescents_12_18": "NR"
+      }
+    },
+    {
+      "id": "japanese_encephalitis",
+      "name": "Japanese Encephalitis (JE) Vaccine",
+      "aliases": ["JE", "japanese encephalitis", "japanese b encephalitis", "encephalitis"],
+      "category": "Travel / Endemic Area",
+      "indications": ["travel", "endemic_areas", "immunocompromised"],
+      "schedule": "Live attenuated: 2 doses 7–28 days apart (0.5 ml SC); Inactivated Vero cell: 2 doses Day 0 and Day 28 (0.5 ml SC)",
+      "doses": "2 doses",
+      "route": "SC (subcutaneous injection)",
+      "dose_volume": "0.5 ml",
+      "formulations": [
+        "Live attenuated vaccine",
+        "Inactivated Vero cell-derived vaccine (approved for ≥2 months — preferred for travelers)"
+      ],
+      "contraindications": [
+        "Live vaccine: do not administer during epidemic season"
+      ],
+      "precautions": [
+        "Travellers staying ≥1 month in endemic areas during transmission season",
+        "Short-term travellers (<1 month): consider if outdoor/rural activities, uncertain itinerary",
+        "Not recommended for urban-only short-term travellers",
+        "Kumbh Mela: consider if stay >1 month",
+        "Chronic illness/immunodeficiency in endemic areas: R"
+      ],
+      "special_populations": {
+        "pregnancy": "Weigh benefit-risk carefully; inactivated vaccine preferred",
+        "immunocompromised": "Inactivated vaccine preferred"
+      },
+      "booster": "Live attenuated: after 11 months for high-risk; Inactivated: after 1–2 years if ongoing exposure",
+      "pages": [36],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "BR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "rabies_pre_exposure",
+      "name": "Rabies Vaccine (Pre-Exposure Prophylaxis)",
+      "aliases": ["rabies", "rabies vaccine", "PrEP rabies", "pre-exposure rabies", "HDCV", "PVRV", "post-exposure", "PEP"],
+      "category": "Occupational / Travel",
+      "indications": ["veterinarians", "animal_handlers", "cave_explorers", "travel", "healthcare_workers"],
+      "schedule": "Pre-exposure (PrEP): 3 doses at Day 0, 7, 21–28; Post-exposure (PEP): 5 doses at Day 0, 3, 7, 14, 28",
+      "doses": "PrEP: 3 doses; PEP: 5 doses (IM) or 4 doses (ID)",
+      "route": "IM (intramuscular) standard; Intradermal (ID) for resource-limited settings",
+      "dose_volume": "PVRV: 0.5 ml IM; HDCV/PCEC/PDEC: 1 ml IM; ID: 0.1 ml",
+      "formulations": [
+        "HDCV: Human Diploid Cell Vaccine",
+        "PCEC: Purified Chick Embryo Cell Vaccine",
+        "PDEC: Purified Duck Embryo Cell Vaccine",
+        "PVRV: Purified Vero Cell Rabies Vaccine (most common in India)"
+      ],
+      "contraindications": [],
+      "precautions": [
+        "Always follow National Guidelines for Rabies Prophylaxis (NCDC/WHO)",
+        "Immediate wound care essential regardless of vaccination status",
+        "RIG (Rabies Immunoglobulin) required for severe exposures",
+        "Re-exposure after completed PrEP and PEP: 2 booster doses at Day 0 and Day 3"
+      ],
+      "special_populations": {
+        "pregnancy": "PEP always indicated; PrEP: R if exposure risk",
+        "veterinarians": "PrEP mandatory for veterinarians, animal handlers, cave explorers, rabies lab workers"
+      },
+      "booster": "2 doses at Day 0 and Day 3 if re-exposed after completed prophylaxis",
+      "pages": [41],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "NR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "NR"
+      }
+    },
+    {
+      "id": "polio",
+      "name": "Polio Vaccine (IPV/OPV)",
+      "aliases": ["polio", "poliomyelitis", "IPV", "OPV", "inactivated polio", "oral polio"],
+      "category": "Travel / Unvaccinated Adults",
+      "indications": ["unvaccinated_adults", "travel", "healthcare_workers", "lab_workers"],
+      "schedule": "Unvaccinated/incompletely vaccinated: 3 doses (Day 0, +1 month, +6–12 months); Previously vaccinated: 1 lifetime booster IPV",
+      "doses": "3 doses (unvaccinated); 1 booster (previously vaccinated)",
+      "route": "IPV: intradermal (ID); OPV: oral",
+      "dose_volume": "IPV: 0.1 ml; OPV: 2 drops",
+      "formulations": [
+        "IPV (Inactivated Polio Vaccine): injectable, ID (note: not available as single injection in India)",
+        "OPV (Oral Polio Vaccine): live attenuated, highly heat-sensitive"
+      ],
+      "contraindications": [
+        "OPV: not available as routine for adults in India; IPV preferred"
+      ],
+      "precautions": [
+        "IPV not available as single injection in India",
+        "Travellers to countries with ongoing polio epidemic or endemic",
+        "HCW and lab workers handling poliovirus specimens",
+        "OPV: store frozen, highly heat-sensitive"
+      ],
+      "special_populations": {
+        "pregnancy": "IPV safe; consider if travel to endemic area",
+        "immunocompromised": "IPV only (not OPV)"
+      },
+      "booster": "1 lifetime booster IPV for previously vaccinated adults",
+      "pages": [40],
+      "recommendations": {
+        "adults_18_49": "BR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "NR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "R"
+      }
+    },
+    {
+      "id": "hib",
+      "name": "Hib Vaccine (Haemophilus influenzae type b)",
+      "aliases": ["hib", "haemophilus influenzae", "haemophilus", "Hib vaccine"],
+      "category": "High-Risk / Immunocompromised",
+      "indications": ["asplenia", "immunocompromised", "csf_leak", "stem_cell_transplant"],
+      "schedule": "At-risk adults: 1 or 3 doses depending on indication",
+      "doses": "1 dose (most at-risk adults); 3 doses at 4-week intervals (HSCT recipients)",
+      "route": "IM (intramuscular)",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Conjugate vaccine (capsular polysaccharide + carrier protein)"],
+      "contraindications": [],
+      "precautions": [
+        "Elective splenectomy: 1 dose at least 14 days before surgery (if unvaccinated)",
+        "Functional/anatomic asplenia: 1 dose if unvaccinated",
+        "HSCT recipients: 3 doses at 4-week intervals, 6–12 months post-transplant"
+      ],
+      "special_populations": {
+        "asplenia": "1 dose mandatory if unvaccinated",
+        "hsct": "3 doses at 4-week intervals, regardless of prior Hib history",
+        "immunocompromised": "1 dose recommended"
+      },
+      "booster": "Not required",
+      "pages": [30],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "BR",
+        "high_risk_immuno": "BR",
+        "lifestyle": "NR",
+        "special_situations": "NR",
+        "adolescents_12_18": "NR"
+      }
+    },
+    {
+      "id": "yellow_fever",
+      "name": "Yellow Fever Vaccine",
+      "aliases": ["yellow fever", "YF vaccine", "yellow jack"],
+      "category": "Travel / International",
+      "indications": ["travel", "endemic_areas"],
+      "schedule": "Single dose, at least 10 days before travel to endemic areas",
+      "doses": "1 dose (lifelong protection in most people)",
+      "route": "IM in deltoid or anterolateral thigh",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Live attenuated vaccine (17D strain)"],
+      "contraindications": [
+        "Severely immunocompromised",
+        "HIV with CD4 count <200",
+        "Infants <9 months",
+        "Pregnancy: usually avoid; if travel unavoidable, benefit-risk evaluation"
+      ],
+      "precautions": [
+        "Required for entry into many African and South American nations",
+        "Must be administered at designated Yellow Fever Vaccination Centres (Govt of India certified)",
+        "Administer at least 10 days before travel",
+        "Booster recommended if: vaccinated before 9 months of age, immunosuppressive therapy, HIV/AIDS, lab workers handling wild-type virus"
+      ],
+      "special_populations": {
+        "pregnancy": "Usually not recommended; postpone travel if possible; 1 dose after thorough benefit-risk evaluation if unavoidable",
+        "lab_workers": "Booster recommended for lab workers handling wild-type yellow fever virus"
+      },
+      "booster": "Single dose provides lifelong protection in most; specific groups require booster (see precautions)",
+      "pages": [44],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "NR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "NR"
+      }
+    },
+    {
+      "id": "cholera",
+      "name": "Cholera Vaccine",
+      "aliases": ["cholera", "cholera vaccine", "WC-rBS", "CVD 103-HgR"],
+      "category": "Travel / Outbreak",
+      "indications": ["travel", "outbreak", "natural_disaster"],
+      "schedule": "WC-rBS: 2 doses ≥1 week before exposure; BivWC: 2 doses 2 weeks apart; Live CVD 103-HgR: single dose ≤10 days before exposure",
+      "doses": "2 doses (killed vaccines) OR 1 dose (live vaccine)",
+      "route": "Oral",
+      "dose_volume": "WC-rBS/BivWC: 1.5 ml; CVD 103-HgR: 100 ml",
+      "formulations": [
+        "Killed WC-rBS (O1 + cholera toxin B subunit): 2 doses ≥1 week apart",
+        "BivWC (O1 and O139, without cholera toxin B subunit): 2 doses 2 weeks apart",
+        "Live attenuated CVD 103-HgR: single dose ≤10 days before exposure"
+      ],
+      "contraindications": [
+        "Live vaccine: avoid in pregnancy"
+      ],
+      "precautions": [
+        "Not for routine use",
+        "Travellers at high risk, limited healthcare access areas",
+        "Natural calamity/outbreak: 2 doses at least 2 weeks apart"
+      ],
+      "special_populations": {
+        "pregnancy": "Live vaccine contraindicated; inactivated vaccine may be considered"
+      },
+      "booster": "Endemic/outbreak situations: booster dose after 2 years",
+      "pages": [26],
+      "recommendations": {
+        "adults_18_49": "NR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "NR",
+        "lifestyle": "NR",
+        "special_situations": "R",
+        "adolescents_12_18": "NR"
+      }
+    },
+    {
+      "id": "bcg",
+      "name": "BCG Vaccine (Tuberculosis)",
+      "aliases": ["bcg", "tuberculosis", "TB vaccine", "bacille calmette guerin"],
+      "category": "Occupational",
+      "indications": ["healthcare_workers", "veterinary_staff", "abattoir_workers"],
+      "schedule": "Single intradermal dose",
+      "doses": "1 dose",
+      "route": "Intradermal injection",
+      "dose_volume": "0.05 ml (infants <1 month); 0.1 ml (>1 month / adults)",
+      "formulations": ["Live attenuated BCG (Bacille Calmette-Guérin)"],
+      "contraindications": [
+        "Generally not administered above age 16 years (limited evidence of efficacy in adults)"
+      ],
+      "precautions": [
+        "For occupational groups aged 16–35: HCW, veterinary staff, abattoir workers at TB risk",
+        "Re-vaccination in adults may offer added protection for vulnerable populations",
+        "Do not expose to direct sunlight or heat"
+      ],
+      "special_populations": {
+        "healthcare_workers": "BCG may be considered for tuberculin-negative HCW aged 16–35",
+        "immunocompromised": "Live vaccine — avoid in severely immunocompromised"
+      },
+      "booster": "Re-vaccination may be considered for vulnerable populations",
+      "pages": [24],
+      "recommendations": {
+        "adults_18_49": "AR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "BR",
+        "high_risk_immuno": "BR",
+        "lifestyle": "NR",
+        "special_situations": "BR",
+        "adolescents_12_18": "AR"
+      }
+    },
+    {
+      "id": "anthrax",
+      "name": "Anthrax Vaccine",
+      "aliases": ["anthrax", "bacillus anthracis", "anthrax vaccine"],
+      "category": "Occupational / Biodefense",
+      "indications": ["livestock_handlers", "lab_workers", "military"],
+      "schedule": "Pre-exposure: 3 doses at 0, 1, 6 months IM; Post-exposure: 3 doses at 0, 2, 4 weeks SC",
+      "doses": "Pre-exposure: 3 doses; Post-exposure: 3 doses",
+      "route": "Pre-exposure: IM; Post-exposure: SC",
+      "dose_volume": "0.5 ml",
+      "formulations": ["Toxoid vaccine"],
+      "contraindications": [
+        "Not recommended for general population"
+      ],
+      "precautions": [
+        "Pre-exposure booster: at 6 and 12 months after primary, then 12-monthly if risk persists",
+        "Only for individuals at increased risk of exposure (livestock handlers in endemic areas, lab workers)"
+      ],
+      "special_populations": {
+        "pregnancy": "Not recommended (NR)",
+        "lab_workers": "Pre-exposure recommended for those at risk of exposure to Bacillus anthracis"
+      },
+      "booster": "Pre-exposure: boosters at 6 and 12 months, then annually if risk persists",
+      "pages": [23],
+      "recommendations": {
+        "adults_18_49": "AR",
+        "elderly_50plus": "NR",
+        "pregnancy": "NR",
+        "at_risk": "NR",
+        "high_risk_immuno": "NR",
+        "lifestyle": "NR",
+        "special_situations": "AR",
+        "adolescents_12_18": "NR"
+      }
+    }
+  ],
+  "comorbidity_map": {
+    "diabetes": {
+      "label": "Diabetes (DM)",
+      "recommended_vaccines": ["influenza", "pneumococcal", "hepatitis_b", "covid19", "tdap_td", "hepatitis_a"],
+      "column": "at_risk"
+    },
+    "heart_disease": {
+      "label": "Heart Disease (CHD, CHF, MI, Stroke)",
+      "recommended_vaccines": ["influenza", "pneumococcal", "covid19", "tdap_td", "zoster"],
+      "column": "at_risk"
+    },
+    "ckd": {
+      "label": "Chronic Kidney Disease (CKD) / Dialysis",
+      "recommended_vaccines": ["influenza", "pneumococcal", "hepatitis_b", "covid19", "tdap_td"],
+      "column": "high_risk_immuno",
+      "notes": "HepB: 40 mcg (1 ml) dose at 0, 2, 6, 12 months for dialysis patients"
+    },
+    "liver_disease": {
+      "label": "Liver Disease (Cirrhosis, Hepatitis)",
+      "recommended_vaccines": ["influenza", "pneumococcal", "hepatitis_a", "hepatitis_b", "covid19", "tdap_td"],
+      "column": "at_risk"
+    },
+    "lung_disease": {
+      "label": "Chronic Lung Disease (COPD, Asthma)",
+      "recommended_vaccines": ["influenza", "pneumococcal", "covid19", "tdap_td"],
+      "column": "at_risk"
+    },
+    "hiv": {
+      "label": "HIV / AIDS",
+      "recommended_vaccines": ["influenza", "pneumococcal", "hepatitis_a", "hepatitis_b", "covid19", "tdap_td", "hpv", "meningococcal", "hib"],
+      "column": "high_risk_immuno",
+      "notes": "Avoid live vaccines (MMR, Varicella, Yellow Fever) unless CD4 adequate"
+    },
+    "immunocompromised": {
+      "label": "Immunocompromised (Malignancy, Transplant, Chemotherapy)",
+      "recommended_vaccines": ["influenza", "pneumococcal", "hepatitis_b", "covid19", "tdap_td", "hib", "meningococcal", "zoster"],
+      "column": "high_risk_immuno",
+      "notes": "Avoid all live vaccines. Timing matters: vaccinate before immunosuppression if possible"
+    },
+    "asplenia": {
+      "label": "Asplenia (Functional or Anatomical)",
+      "recommended_vaccines": ["pneumococcal", "meningococcal", "hib", "influenza", "covid19", "tdap_td"],
+      "column": "high_risk_immuno",
+      "notes": "All encapsulated bacteria vaccines essential: Pneumococcal + MenACWY + Hib"
+    },
+    "pregnancy": {
+      "label": "Pregnancy",
+      "recommended_vaccines": ["influenza", "tdap_td", "covid19"],
+      "avoid_vaccines": ["mmr", "varicella", "yellow_fever", "cholera_live"],
+      "column": "pregnancy",
+      "notes": "Tdap at every pregnancy (27–36 weeks). Live vaccines contraindicated."
+    },
+    "healthcare_workers": {
+      "label": "Healthcare Workers (HCW)",
+      "recommended_vaccines": ["influenza", "hepatitis_b", "covid19", "tdap_td", "mmr", "varicella", "rabies_pre_exposure"],
+      "column": "special_situations"
+    },
+    "travel": {
+      "label": "Travellers",
+      "recommended_vaccines": ["hepatitis_a", "hepatitis_b", "typhoid", "yellow_fever", "japanese_encephalitis", "meningococcal", "rabies_pre_exposure", "cholera", "influenza", "covid19"],
+      "column": "special_situations",
+      "notes": "Vaccines depend on destination — check country-specific requirements"
+    },
+    "elderly": {
+      "label": "Elderly (≥50 years)",
+      "recommended_vaccines": ["influenza", "pneumococcal", "zoster", "covid19", "tdap_td", "hepatitis_b"],
+      "column": "elderly_50plus"
+    }
+  },
+  "quick_reference": {
+    "page_52_chart": {
+      "page": 52,
+      "title": "Age-wise Vaccination Recommendation According to Risk",
+      "description": "Master color-coded recommendation chart for all 23 vaccines across 6 patient risk categories"
+    },
+    "co_administration_rules": {
+      "general": "Most inactivated vaccines can be given simultaneously",
+      "live_vaccines": "Live vaccines (MMR, Varicella, Yellow Fever, JE live) should ideally be given same day or ≥4 weeks apart",
+      "exceptions": [
+        "Influenza + COVID-19: can co-administer",
+        "Tdap + any other: can co-administer",
+        "Live attenuated vaccines: same day or ≥4 weeks interval between them"
+      ]
+    },
+    "missed_dose_rules": {
+      "general": "Do not restart series — continue from where left off",
+      "influenza": "Annual dose — if missed, vaccinate whenever available during flu season",
+      "hep_b": "Continue series; do not restart even if interval prolonged",
+      "tdap": "Continue from where interrupted; use minimum intervals"
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "diabetes": {
+    "label": "Diabetes Mellitus",
+    "source_page": 45,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Tdap/Td", "dose": "1", "schedule": null, "booster": "Td every 10 years"},
+      {"name": "Hepatitis A", "dose": "Inactivated: 2 doses 1 ml (6 months apart) OR Live attenuated: 1 dose 0.5 ml", "schedule": null, "booster": null},
+      {"name": "Hepatitis B", "dose": "2 or 3 doses (based on vaccine dose)", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 1 year later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)"},
+      {"name": "COVID-19", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "MMR", "dose": "1 or 2 doses depending on the condition", "schedule": null, "booster": null},
+      {"name": "Varicella", "dose": "2 doses 4–8 weeks apart", "schedule": null, "booster": null},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null},
+      {"name": "HPV", "dose": "Female ≤26 yr: 2 or 3 doses; Male ≤21 yr: 2 or 4 doses", "schedule": null, "booster": null}
+    ]
+  },
+  "liver": {
+    "label": "Chronic Liver Disease",
+    "source_page": 45,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Tdap/Td", "dose": "1", "schedule": null, "booster": "Td every 10 years"},
+      {"name": "Hepatitis A", "dose": "2 doses (6 months apart)", "schedule": null, "booster": null},
+      {"name": "Hepatitis E", "dose": "3 doses (0, 1, 6 months in high risk)", "schedule": null, "booster": null},
+      {"name": "HPV", "dose": "Female ≤26 yr: 2 or 3 doses; Male ≤21 yr: 2 or 4 doses", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 1 year later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)"},
+      {"name": "COVID-19", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "MMR", "dose": "1 dose", "schedule": null, "booster": null},
+      {"name": "Varicella", "dose": "1 or 2 doses depending on the indication", "schedule": null, "booster": null},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null}
+    ]
+  },
+  "heart": {
+    "label": "Chronic Heart Disease / Chronic Lung Disease",
+    "source_page": 45,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Tdap/Td", "dose": "1", "schedule": null, "booster": "Td every 10 years"},
+      {"name": "Hepatitis A", "dose": "Inactivated: 2 doses 1 ml (6 months apart) OR Live attenuated: 1 dose 0.5 ml", "schedule": null, "booster": null},
+      {"name": "HPV", "dose": "Female ≤26 yr: 2 or 3 doses; Male ≤21 yr: 2 or 4 doses", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 1 year later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)"},
+      {"name": "COVID-19", "dose": "1", "schedule": null, "booster": null},
+      {"name": "MMR", "dose": "1 or 2 doses depending on the condition", "schedule": null, "booster": null},
+      {"name": "Varicella", "dose": "1 or 2 doses depending on the indication", "schedule": null, "booster": null},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null},
+      {"name": "Meningococcal (MenACWY)", "dose": "2 doses 4 weeks apart", "schedule": null, "booster": null, "notes": "Age >50 years only"}
+    ]
+  },
+  "lung": {
+    "label": "Chronic Lung Disease",
+    "source_page": 45,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Tdap/Td", "dose": "1", "schedule": null, "booster": "Td every 10 years"},
+      {"name": "Hepatitis A", "dose": "Inactivated: 2 doses 1 ml (6 months apart) OR Live attenuated: 1 dose 0.5 ml", "schedule": null, "booster": null},
+      {"name": "HPV", "dose": "Female ≤26 yr: 2 or 3 doses; Male ≤21 yr: 2 or 4 doses", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 1 year later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)"},
+      {"name": "COVID-19", "dose": "1", "schedule": null, "booster": null},
+      {"name": "MMR", "dose": "1 or 2 doses depending on the condition", "schedule": null, "booster": null},
+      {"name": "Varicella", "dose": "1 or 2 doses depending on the indication", "schedule": null, "booster": null},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null},
+      {"name": "Meningococcal (MenACWY)", "dose": "2 doses 4 weeks apart", "schedule": null, "booster": null, "notes": "Age >50 years only"}
+    ]
+  },
+  "kidney": {
+    "label": "Chronic Kidney Disease / Haemodialysis / Nephrotic Syndrome",
+    "source_page": 46,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Tdap/Td", "dose": "1", "schedule": null, "booster": "Every 10 years"},
+      {"name": "Hepatitis A", "dose": "Inactivated: 2 doses 1 ml (6 months apart) OR Live attenuated: 1 dose 0.5 ml", "schedule": null, "booster": null},
+      {"name": "Hepatitis B", "dose": "2 or 3 doses (based on vaccine dose)", "schedule": null, "booster": null},
+      {"name": "HPV", "dose": "Female ≤26 yr: 2 or 3 doses; Male ≤21 yr: 2 or 4 doses", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 8 weeks later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)", "notes": "Note: PPSV23 given 8 weeks after PCV (not 1 year as in other conditions)"},
+      {"name": "COVID-19", "dose": "1", "schedule": null, "booster": null},
+      {"name": "MMR", "dose": "1 dose", "schedule": null, "booster": null},
+      {"name": "Varicella", "dose": "2 doses 4–8 weeks apart", "schedule": null, "booster": null},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null}
+    ]
+  },
+  "cancer": {
+    "label": "Individuals with Cancer",
+    "source_page": 46,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null, "notes": "Both before and after chemotherapy"},
+      {"name": "Tdap", "dose": "1 dose before chemo; 1 dose minimum 3 months after chemo", "schedule": null, "booster": "Td every 10 years after"},
+      {"name": "Hepatitis B", "dose": "2 or 3 doses (based on vaccine dose)", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 8 weeks later", "schedule": null, "booster": "PPSV23 booster after 5 years", "notes": "Give at least 2 weeks before chemo OR minimum 3 months after chemo"},
+      {"name": "Hib", "dose": "1 dose before chemo; 1 dose at least 3 months after chemo", "schedule": null, "booster": null},
+      {"name": "COVID-19", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "MMR", "dose": "2 doses 4–8 weeks apart", "schedule": null, "booster": null, "notes": "After therapy only (live vaccine — avoid before/during chemo)"},
+      {"name": "Varicella", "dose": "2 doses 4–8 weeks apart", "schedule": null, "booster": null, "notes": "After therapy only (live vaccine — avoid before/during chemo)"},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null, "notes": "After therapy"},
+      {"name": "Hepatitis E", "dose": "3 doses (0, 1, 6 months in high risk)", "schedule": null, "booster": null},
+      {"name": "Hepatitis A", "dose": "Inactivated: 2 doses 1 ml (6 months apart) OR Live attenuated: 1 dose 0.5 ml", "schedule": null, "booster": null}
+    ]
+  },
+  "hiv": {
+    "label": "HIV Infection / Immunocompromising Conditions",
+    "source_page": 49,
+    "vaccines": [
+      {"name": "Influenza (inactivated)", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Tdap/Td", "dose": "1", "schedule": null, "booster": "Td every 10 years"},
+      {"name": "Hepatitis A", "dose": "2 doses, 6 months apart", "schedule": null, "booster": null},
+      {"name": "Hepatitis B", "dose": "3 doses (0, 1, and 6 months)", "schedule": null, "booster": null},
+      {"name": "Hepatitis E", "dose": "3 doses (0, 1, 6 months in high risk)", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR 1 dose PCV13 followed by PPSV23 8 weeks later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)"},
+      {"name": "COVID-19", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "HPV", "dose": "3 doses", "schedule": "0, 6, and 12 months", "booster": null, "notes": "For individuals ≤26 years of age"},
+      {"name": "Shingles (Herpes Zoster)", "dose": "2 doses 2–6 months apart", "schedule": null, "booster": null}
+    ]
+  },
+  "pregnancy": {
+    "label": "Pregnant Females",
+    "source_page": 49,
+    "vaccines": [
+      {"name": "Influenza", "dose": "1", "schedule": "Recommended during pregnancy", "booster": null},
+      {"name": "Tdap", "dose": "1", "schedule": "Preferably between 27 and 36 weeks of gestation (each pregnancy)", "booster": null},
+      {"name": "COVID-19", "dose": "1", "schedule": "Recommended", "booster": null},
+      {"name": "Hepatitis B", "dose": "3 doses", "schedule": "Recommended; can also be given during pregnancy", "booster": null}
+    ]
+  },
+  "healthcare": {
+    "label": "Healthcare Personnel",
+    "source_page": 50,
+    "vaccines": [
+      {"name": "Influenza", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Typhoid", "dose": "1", "schedule": null, "booster": "Every 3–7 years in endemic setup"},
+      {"name": "Tdap", "dose": "1", "schedule": null, "booster": "Every 10 years"},
+      {"name": "Hepatitis A", "dose": "Inactivated: 2 doses 1 ml (6 months apart) OR Live attenuated: 1 dose 0.5 ml", "schedule": null, "booster": null},
+      {"name": "Hepatitis B", "dose": "3 doses (0, 1 and 6 months)", "schedule": null, "booster": null},
+      {"name": "Hepatitis E", "dose": "3 doses (0, 1, 6 months in high risk)", "schedule": null, "booster": null},
+      {"name": "MMR", "dose": "2 doses (at least 28 days apart)", "schedule": null, "booster": null, "notes": "For non-immunized individuals"},
+      {"name": "COVID-19", "dose": "1", "schedule": "Annually", "booster": null},
+      {"name": "Varicella", "dose": "2 doses", "schedule": null, "booster": null},
+      {"name": "Pneumococcal", "dose": "1 dose PCV20 OR PCV13 followed by PPSV23 1 year later", "schedule": null, "booster": "PPSV23 booster after 5 years (maximum 2 doses: one before 65 years, one after 65 years)"}
+    ]
+  },
+  "travel": {
+    "label": "Travellers",
+    "source_page": 50,
+    "vaccines": [
+      {"name": "Routine vaccines", "dose": "Ensure up to date", "schedule": "MMR, DTaP, Varicella, Polio, COVID-19, Pneumococcal, Influenza", "booster": null},
+      {"name": "Hepatitis A", "dose": "2 doses", "schedule": "High risk through contaminated food or water", "booster": null},
+      {"name": "Typhoid", "dose": "1", "schedule": "Recommended for travellers at risk of exposure", "booster": null},
+      {"name": "Hepatitis B", "dose": "3 doses", "schedule": "If intimate contact with locals or medical treatment required", "booster": null},
+      {"name": "Hepatitis E", "dose": "3 doses (0, 1, 6 months in high risk)", "schedule": "Risk through contaminated food or water", "booster": null},
+      {"name": "Japanese Encephalitis", "dose": "As per schedule", "schedule": "Extended stay >1 month in rural/agricultural areas, especially during monsoon season", "booster": null},
+      {"name": "Rabies (pre-exposure)", "dose": "3 doses at 0, 7, and 28 days", "schedule": "If risk of animal exposure", "booster": null},
+      {"name": "Cholera", "dose": "As per schedule", "schedule": "If visiting outbreak-prone areas", "booster": null},
+      {"name": "Meningococcal", "dose": "1 dose", "schedule": "10–14 days before planned travel date", "booster": null},
+      {"name": "Yellow Fever", "dose": "1 dose (lifetime)", "schedule": "Mandatory for travellers from Africa and South America", "booster": null}
+    ]
+  }
+}

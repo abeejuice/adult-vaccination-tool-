@@ -1,0 +1,42 @@
+{
+  "columns": {
+    "50_plus":   "≥ 50 years",
+    "pregnancy": "Pregnancy (18-49 years)",
+    "at_risk":   "At-risk 18-49 (Chronic Respiratory/Heart/Liver Disease, Diabetes Mellitus)",
+    "high_risk": "High-risk/Immunocompromised 18-49 (CKD, Haemodialysis, Nephrotic syndrome, HIV, Autoimmune, Malignancies, Transplant, Asplenia, SCD, Hodgkins, Down syndrome, CSF Leak, Cochlear Implant, complement deficiencies)",
+    "lifestyle":  "Lifestyle-related 18-49 (Alcohol use disorder, Smoking)",
+    "special":   "Special situations 18-49 (HCPs, Travellers, Mass gatherings, Occupational exposure)",
+    "adolescents": "12-18 years (Adolescents)"
+  },
+  "legend": {
+    "R":  "Recommended",
+    "NR": "Not Recommended",
+    "BR": "May be considered after benefit-risk evaluation",
+    "AR": "With additional risk — consider based on individual exposure risk"
+  },
+  "vaccines": {
+    "Anthrax":                  {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"AR","adolescents":"NR"},
+    "BCG (Tuberculosis)":       {"50_plus":"NR","pregnancy":"NR","at_risk":"BR","high_risk":"BR","lifestyle":"NR","special":"BR","adolescents":"AR"},
+    "Varicella (Chickenpox)":   {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"BR","lifestyle":"NR","special":"NR","adolescents":"R"},
+    "Cholera":                  {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"R", "adolescents":"NR"},
+    "COVID-19":                 {"50_plus":"R", "pregnancy":"R", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Td":                       {"50_plus":"R", "pregnancy":"R", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Tdap":                     {"50_plus":"R", "pregnancy":"R", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Hib":                      {"50_plus":"NR","pregnancy":"NR","at_risk":"BR","high_risk":"BR","lifestyle":"NR","special":"NR","adolescents":"NR"},
+    "Hepatitis A":              {"50_plus":"AR","pregnancy":"AR","at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Hepatitis B":              {"50_plus":"AR","pregnancy":"R", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Hepatitis E":              {"50_plus":"R", "pregnancy":"NR", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"NR"},
+    "HPV":                      {"50_plus":"NR","pregnancy":"NR","at_risk":"R", "high_risk":"R", "lifestyle":"NR","special":"NR","adolescents":"R"},
+    "Influenza":                {"50_plus":"R", "pregnancy":"R", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Japanese Encephalitis":    {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"BR","lifestyle":"NR","special":"R", "adolescents":"R"},
+    "MMR":                      {"50_plus":"NR","pregnancy":"NR","at_risk":"R", "high_risk":"BR","lifestyle":"R", "special":"R", "adolescents":"R"},
+    "MenACWY":                  {"50_plus":"BR","pregnancy":"AR","at_risk":"BR","high_risk":"BR","lifestyle":"NR","special":"R", "adolescents":"AR"},
+    "MenB":                     {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"R", "adolescents":"NR"},
+    "Pneumococcal":             {"50_plus":"R", "pregnancy":"R", "at_risk":"R", "high_risk":"R", "lifestyle":"R", "special":"R", "adolescents":"R"},
+    "Polio":                    {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"R", "adolescents":"R"},
+    "Rabies":                   {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"R", "adolescents":"NR"},
+    "Typhoid":                  {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"R", "adolescents":"R"},
+    "Shingles (Herpes Zoster)": {"50_plus":"R", "pregnancy":"NR","at_risk":"R", "high_risk":"BR","lifestyle":"NR","special":"NR","adolescents":"NR"},
+    "Yellow Fever":             {"50_plus":"NR","pregnancy":"NR","at_risk":"NR","high_risk":"NR","lifestyle":"NR","special":"R", "adolescents":"NR"}
+  }
+}
