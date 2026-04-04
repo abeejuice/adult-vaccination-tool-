@@ -1233,3 +1233,66 @@ button, input, .vaccine-card, .quick-chip, .comorbidity-chip, .filter-chip {
 }
 .lightbox-nav button:hover:not(:disabled) { background: rgba(234,106,71,0.22); }
 .lightbox-nav button:disabled { opacity: 0.3; cursor: default; }
+
+/* ── Mobile Fixes ────────────────────────────────────────────────────────── */
+
+/* Fix 1: Prevent 300ms tap delay + double-tap zoom on all interactive elements */
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Fix 2: Touch target minimums — Apple HIG 44pt, Material 48dp.
+   All chip/button heights were 27-38px, well below threshold. */
+@media (max-width: 768px) {
+  button, [role="button"] {
+    min-height: 44px;
+  }
+  /* Chips stay visually compact but hit area is full 44px */
+  .quick-chip, .filter-chip, .chat-example-chip {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  /* Submit button */
+  .chat-submit-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Schedule / Back buttons */
+  .schedule-btn {
+    min-height: 44px;
+  }
+}
+
+/* Fix 3: iOS auto-zoom prevention — Safari zooms when input font-size < 16px.
+   The chat textarea was 14.4px, triggering full-page zoom on every tap. */
+@media (max-width: 768px) {
+  .chat-input, textarea {
+    font-size: 16px;
+  }
+}
+
+/* Fix 4: Safe area inset for iOS home bar — requires viewport-fit=cover in HTML.
+   Without this the fixed chat input bar overlaps the system home indicator. */
+@media (max-width: 768px) {
+  .chat-input-bar {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Fix 5: Hide desktop keyboard shortcut hint on touchscreens */
+@media (max-width: 768px) {
+  .chat-hint {
+    display: none;
+  }
+}
+
+/* Fix 6: Respect prefers-reduced-motion — Framer Motion starts at opacity:0,
+   so users with reduced motion or slow devices see a blank page on first load. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
