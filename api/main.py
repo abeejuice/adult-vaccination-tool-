@@ -1,7 +1,11 @@
 import os
 import json
 import re
+import mimetypes
 from pathlib import Path
+
+# Ensure SVG files are served with the correct MIME type on all platforms
+mimetypes.add_type('image/svg+xml', '.svg')
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles

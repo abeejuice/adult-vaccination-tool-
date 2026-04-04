@@ -5,6 +5,7 @@ import Fuse from 'fuse.js'
 import vaccinesData from '../data/vaccines.json'
 import VaccineDrawer from '../components/VaccineDrawer'
 import { spring, springBounce, springEntrance, staggerContainer, fadeUp, scalePop } from '../lib/motion'
+import galenWordmark from '../assets/galenai-full-logo.svg'
 
 type Vaccine = typeof vaccinesData.vaccines[number]
 
@@ -103,7 +104,7 @@ function VaccineCard({
       onClick={onClick}
       layout
       variants={fadeUp}
-      whileHover={{ scale: 1.02, boxShadow: '0 4px 20px rgba(249,115,22,0.12)' }}
+      whileHover={{ scale: 1.02, boxShadow: '0 4px 20px rgba(234,106,71,0.12)' }}
       whileTap={{ scale: 0.98 }}
       transition={spring}
     >
@@ -152,13 +153,18 @@ export default function Home() {
     }
   }, [isMobile, navigate])
 
+  const handleAskAI = useCallback(() => {
+    const q = query.trim()
+    if (q) navigate('/chat?q=' + encodeURIComponent(q))
+  }, [query, navigate])
+
   return (
     <div className="home-container">
       {/* Header */}
       <header className="site-header">
         <div className="header-content">
           <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={springEntrance}>
-            <h1 className="site-title">Vaccination Protocol</h1>
+            <img src={galenWordmark} alt="GalenAI" className="site-logo-full" />
             <p className="site-subtitle">Indian Consensus Guidelines on Adult Immunization 2026</p>
           </motion.div>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -173,32 +179,46 @@ export default function Home() {
             >
               View Schedule Chart
             </motion.button>
-            <motion.button
-              className="schedule-btn"
-              onClick={() => navigate('/chat')}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              transition={spring}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              Ask AI ✦
-            </motion.button>
           </div>
         </div>
       </header>
 
       <main className="home-main">
-        {/* Search */}
+        {/* AI Search Bar */}
         <motion.div className="search-section" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ ...springEntrance, delay: 0.05 }}>
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search vaccines, conditions (e.g. flu, diabetes, pregnancy, CKD)..."
-            value={query}
-            onChange={e => { setQuery(e.target.value); setActiveFilter(null) }}
-          />
-          <div className="search-hint">or press <kbd>⌘K</kbd></div>
+          <div className="search-ai-bar">
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Ask AI about a patient or vaccine... (e.g. 65 yr diabetic, pregnancy, HIV)"
+              value={query}
+              onChange={e => { setQuery(e.target.value); setActiveFilter(null) }}
+              onKeyDown={e => {
+                if (e.key === 'Enter' && query.trim()) {
+                  e.preventDefault()
+                  handleAskAI()
+                }
+              }}
+            />
+            <AnimatePresence>
+              {query.trim() && (
+                <motion.button
+                  className="search-ai-submit"
+                  onClick={handleAskAI}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.85 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={spring}
+                  type="button"
+                >
+                  Ask AI ✦
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </div>
+          <div className="search-hint">Press <kbd>Enter</kbd> to ask AI · or press <kbd>⌘K</kbd> to search</div>
         </motion.div>
 
         {/* Quick Access */}
@@ -213,7 +233,7 @@ export default function Home() {
                   <motion.button
                     key={id}
                     className="quick-chip"
-                    onClick={() => handleCardClick(id)}
+                    onClick={() => navigate('/chat?q=' + encodeURIComponent('What are the vaccination recommendations for ' + v.name + '?'))}
                     initial={{ opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ ...springEntrance, delay: 0.1 + i * 0.04 }}
@@ -241,15 +261,6 @@ export default function Home() {
                 <h2 className="section-title" style={{ marginBottom: '0.25rem' }}>Age-wise Recommendation Chart</h2>
                 <p className="hero-chart-desc">Color-coded matrix · Tap a patient category to filter vaccines below</p>
               </div>
-              <motion.button
-                className="view-full-btn"
-                onClick={() => navigate('/schedule')}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={spring}
-              >
-                Full Chart →
-              </motion.button>
             </div>
 
             {/* Clip-path reveal */}
@@ -284,8 +295,8 @@ export default function Home() {
                         style={{
                           position: 'absolute', inset: 0,
                           borderRadius: '20px',
-                          background: 'rgba(96,165,250,0.18)',
-                          border: '1px solid #60a5fa',
+                          background: 'rgba(234,106,71,0.18)',
+                          border: '1px solid #ea6a47',
                         }}
                       />
                     )}
@@ -353,7 +364,7 @@ export default function Home() {
               ].map(({ k, bg, label }) => (
                 <span key={k} className="legend-item">
                   <span style={{ background: bg, color: '#fff', padding: '1px 6px', borderRadius: '3px', fontSize: '0.7rem', fontWeight: 700 }}>{k}</span>
-                  <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>{label}</span>
+                  <span style={{ color: 'rgba(255,216,205,0.7)', fontSize: '0.75rem' }}>{label}</span>
                 </span>
               ))}
             </div>
@@ -368,7 +379,7 @@ export default function Home() {
           >
             <AnimatePresence mode="popLayout">
               {displayedVaccines.length === 0 ? (
-                <motion.p key="empty" {...fadeUp} style={{ color: '#64748b', padding: '1rem 0' }}>
+                <motion.p key="empty" {...fadeUp} style={{ color: 'var(--text-muted)', padding: '1rem 0' }}>
                   No vaccines found for this filter.
                 </motion.p>
               ) : (

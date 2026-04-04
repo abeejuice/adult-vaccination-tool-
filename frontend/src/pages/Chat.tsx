@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ReactMarkdown from 'react-markdown'
 import { spring, springEntrance, fadeUp } from '../lib/motion'
+import galenWordmark from '../assets/galenai-full-logo.svg'
+import galenIcon from '../assets/galenai-icon.svg'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
 
@@ -14,6 +16,11 @@ interface ChatEntry {
   answer: string
   pages: number[]
   error?: boolean
+}
+
+interface LightboxState {
+  pages: number[]
+  idx: number
 }
 
 function LoadingDots() {
@@ -36,7 +43,7 @@ function LoadingDots() {
   )
 }
 
-function PageImage({ src, pageNum }: { src: string; pageNum: number }) {
+function PageImage({ src, pageNum, onClick }: { src: string; pageNum: number; onClick: () => void }) {
   const [loaded, setLoaded] = useState(false)
   return (
     <motion.div
@@ -44,6 +51,9 @@ function PageImage({ src, pageNum }: { src: string; pageNum: number }) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ ...springEntrance }}
+      onClick={onClick}
+      style={{ cursor: 'pointer', position: 'relative' }}
+      whileHover={{ scale: 1.02, boxShadow: '0 4px 16px rgba(234,106,71,0.2)' }}
     >
       <div className="chat-page-label">Page {pageNum}</div>
       <img
@@ -53,11 +63,20 @@ function PageImage({ src, pageNum }: { src: string; pageNum: number }) {
         style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.2s' }}
         onLoad={() => setLoaded(true)}
       />
+      <div className="chat-page-zoom-hint">⤢ Expand</div>
     </motion.div>
   )
 }
 
-function ChatBubble({ entry, index }: { entry: ChatEntry; index: number }) {
+function ChatBubble({
+  entry,
+  index,
+  onImageClick,
+}: {
+  entry: ChatEntry
+  index: number
+  onImageClick: (pages: number[], idx: number) => void
+}) {
   return (
     <motion.div
       className="chat-entry"
@@ -85,11 +104,12 @@ function ChatBubble({ entry, index }: { entry: ChatEntry; index: number }) {
         <div className="chat-pages-section">
           <div className="chat-pages-title">Referenced pages ({entry.pages.length})</div>
           <div className="chat-pages-grid">
-            {entry.pages.map(p => (
+            {entry.pages.map((p, i) => (
               <PageImage
                 key={p}
                 pageNum={p}
                 src={`${API_BASE_URL}/images/page_${pad(p)}.png`}
+                onClick={() => onImageClick(entry.pages, i)}
               />
             ))}
           </div>
@@ -101,12 +121,17 @@ function ChatBubble({ entry, index }: { entry: ChatEntry; index: number }) {
 
 export default function Chat() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const initialQuery = searchParams.get('q') ?? ''
+
   const [question, setQuestion] = useState('')
   const [loading, setLoading] = useState(false)
   const [history, setHistory] = useState<ChatEntry[]>([])
+  const [lightbox, setLightbox] = useState<LightboxState | null>(null)
   const nextId = useRef(0)
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+  const hasAutoSubmitted = useRef(false)
 
   useEffect(() => {
     inputRef.current?.focus()
@@ -117,6 +142,62 @@ export default function Chat() {
       bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   }, [history])
+
+  // Auto-submit query from URL param (?q=...)
+  useEffect(() => {
+    if (!initialQuery || hasAutoSubmitted.current) return
+    hasAutoSubmitted.current = true
+    const q = initialQuery.trim()
+    if (!q) return
+    setLoading(true)
+    fetch(`${API_BASE_URL}/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: q }),
+    })
+      .then(async res => {
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({ detail: 'Unknown error' }))
+          throw new Error(err.detail ?? `Server error ${res.status}`)
+        }
+        return res.json()
+      })
+      .then(data => {
+        setHistory([{
+          id: nextId.current++,
+          question: q,
+          answer: data.answer ?? 'No answer returned.',
+          pages: Array.isArray(data.page_numbers) ? data.page_numbers : [],
+        }])
+      })
+      .catch(err => {
+        setHistory([{
+          id: nextId.current++,
+          question: q,
+          answer: `Could not get an answer. ${err instanceof Error ? err.message : 'Please check that the backend is running and try again.'}`,
+          pages: [],
+          error: true,
+        }])
+      })
+      .finally(() => {
+        setLoading(false)
+        setTimeout(() => inputRef.current?.focus(), 100)
+      })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Lightbox keyboard navigation
+  useEffect(() => {
+    if (!lightbox) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null)
+      if (e.key === 'ArrowRight')
+        setLightbox(l => l && l.idx < l.pages.length - 1 ? { ...l, idx: l.idx + 1 } : l)
+      if (e.key === 'ArrowLeft')
+        setLightbox(l => l && l.idx > 0 ? { ...l, idx: l.idx - 1 } : l)
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [lightbox])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -178,7 +259,7 @@ export default function Chat() {
       <header className="site-header">
         <div className="header-content">
           <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={springEntrance}>
-            <h1 className="site-title">Ask AI</h1>
+            <img src={galenWordmark} alt="GalenAI" className="site-logo-full" />
             <p className="site-subtitle">Clinical decision support · Indian Adult Immunization Guidelines 2026</p>
           </motion.div>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -208,7 +289,9 @@ export default function Chat() {
               exit={{ opacity: 0 }}
               transition={{ ...springEntrance, delay: 0.1 }}
             >
-              <div className="chat-empty-icon">✦</div>
+              <div className="chat-empty-icon">
+                <img src={galenIcon} alt="GalenAI" className="chat-logo-icon" />
+              </div>
               <p className="chat-empty-title">Ask a clinical question</p>
               <p className="chat-empty-sub">
                 Describe your patient — age, conditions, risk factors.<br />
@@ -240,7 +323,12 @@ export default function Chat() {
         {/* Conversation history */}
         <div className="chat-history">
           {history.map((entry, i) => (
-            <ChatBubble key={entry.id} entry={entry} index={i} />
+            <ChatBubble
+              key={entry.id}
+              entry={entry}
+              index={i}
+              onImageClick={(pages, idx) => setLightbox({ pages, idx })}
+            />
           ))}
 
           {/* Loading indicator */}
@@ -253,7 +341,9 @@ export default function Chat() {
                 exit={{ opacity: 0 }}
                 transition={springEntrance}
               >
-                <span className="chat-a-label">AI</span>
+                <div className="chat-loading-logo">
+                  <img src={galenIcon} alt="GalenAI" className="chat-logo-icon--sm" />
+                </div>
                 <LoadingDots />
               </motion.div>
             )}
@@ -293,6 +383,53 @@ export default function Chat() {
         </motion.form>
         <p className="chat-hint">Press Enter to submit · Shift+Enter for new line</p>
       </main>
+
+      {/* Lightbox overlay */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            className="lightbox-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              className="lightbox-container"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={springEntrance}
+              onClick={e => e.stopPropagation()}
+            >
+              <img
+                src={`${API_BASE_URL}/images/page_${pad(lightbox.pages[lightbox.idx])}.png`}
+                className="lightbox-image"
+                alt={`Guideline page ${lightbox.pages[lightbox.idx]}`}
+              />
+              {lightbox.pages.length > 1 && (
+                <div className="lightbox-nav">
+                  <button
+                    onClick={() => setLightbox(l => l && l.idx > 0 ? { ...l, idx: l.idx - 1 } : l)}
+                    disabled={lightbox.idx === 0}
+                  >
+                    ‹
+                  </button>
+                  <span>{lightbox.idx + 1} / {lightbox.pages.length}</span>
+                  <button
+                    onClick={() => setLightbox(l => l && l.idx < l.pages.length - 1 ? { ...l, idx: l.idx + 1 } : l)}
+                    disabled={lightbox.idx === lightbox.pages.length - 1}
+                  >
+                    ›
+                  </button>
+                </div>
+              )}
+              <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

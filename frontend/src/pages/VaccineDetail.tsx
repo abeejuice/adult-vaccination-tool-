@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { toast } from 'sonner'
 import vaccinesData from '../data/vaccines.json'
+import galenIcon from '../assets/galenai-icon.svg'
 import { spring, springBounce, springEntrance, slideLeft } from '../lib/motion'
 
 type Vaccine = typeof vaccinesData.vaccines[number]
@@ -154,6 +155,7 @@ export default function VaccineDetail() {
 
   return (
     <div className="detail-container">
+      <img src={galenIcon} alt="" className="detail-watermark" aria-hidden="true" />
       <div className="detail-header">
         <motion.button
           className="back-btn"
@@ -208,7 +210,7 @@ export default function VaccineDetail() {
           {Object.entries(BADGE_CONFIG).map(([k, v]) => (
             <span key={k} className="legend-item">
               <span style={{ background: v.bg, color: '#fff', padding: '1px 6px', borderRadius: '3px', fontSize: '0.7rem', fontWeight: 700 }}>{k}</span>
-              <span style={{ color: '#94a3b8', fontSize: '0.75rem' }}>{v.label}</span>
+              <span style={{ color: 'rgba(255,216,205,0.7)', fontSize: '0.75rem' }}>{v.label}</span>
             </span>
           ))}
         </div>
